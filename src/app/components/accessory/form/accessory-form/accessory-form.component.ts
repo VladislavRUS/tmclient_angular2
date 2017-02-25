@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
+import {AccessoryService} from "../../../../services/accessory.service";
+import {DamperDetailedViewComponent} from "../../../../activities/damper-detailed-view/damper-detailed-view.component";
 
 @Component({
   selector: 'accessory-form',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccessoryFormComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  private damperUuid: string;
+
+  constructor(
+    private accessoryService: AccessoryService,
+    private damperDetailedView: DamperDetailedViewComponent
+  ) { }
 
   ngOnInit() {
   }
 
+  onSave(accessoryForm): void {
+    let accessory = {
+      damperUuid: this.damperUuid,
+      name: accessoryForm.name,
+      designation: accessoryForm.designation
+    };
+
+    this.accessoryService.addAccessory(accessory).subscribe(res => {
+      this.damperDetailedView.loadData();
+      this.damperDetailedView.toggle('accessory');
+      accessoryForm.reset();
+    })
+  }
 }

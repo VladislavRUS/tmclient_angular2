@@ -1,3 +1,19 @@
-<p>
-  accessory-form works!
-</p>
+<form class="form"
+      #accessoryForm="ngForm">
+
+  <div class="form-header">Добавление комплектующего</div>
+
+  <div class="form-control">
+    <label>Введите наименование</label>
+    <input class="input" name="name" [(ngModel)]="accessoryForm.name">
+  </div>
+
+  <div class="form-control">
+    <label>Введите обозначение</label>
+    <input class="input" name="designation" [(ngModel)]="accessoryForm.designation" >
+  </div>
+
+  <div class="form-actions">
+    <div class="form-button _save" (click)="onSave(accessoryForm)">Сохранить</div>
+  </div>
+</form>

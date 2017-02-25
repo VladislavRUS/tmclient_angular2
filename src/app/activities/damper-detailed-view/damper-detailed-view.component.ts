@@ -98,13 +98,19 @@ export class DamperDetailedViewComponent implements OnInit {
   toggle(what:string): void {
     switch (what) {
       case 'contract': {
-        this.contractFormOpened = !this.contractFormOpened
+        this.contractFormOpened = !this.contractFormOpened;
         break;
       }
       case 'accessory': {
         this.accessoryFormOpened = !this.accessoryFormOpened;
         break;
       }
+    }
+  }
+
+  onUpdate(): void {
+    var damper = {
+
     }
   }
 }

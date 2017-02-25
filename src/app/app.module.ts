@@ -20,6 +20,7 @@ import { ListItemComponent } from './components/list-item/list-item.component';
 import { ContractFormComponent } from './components/contract/form/contract-form/contract-form.component';
 import { AccessoryFormComponent } from './components/accessory/form/accessory-form/accessory-form.component';
 import {ContractService} from "./services/contract.service";
+import {AccessoryService} from "./services/accessory.service";
 
 const appRoutes: Routes = [
   { path: 'dampers', component: DamperViewComponent },
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     DampersService,
     ContractService,
     DamperViewComponent,
-    DamperDetailedViewComponent
+    DamperDetailedViewComponent,
+    AccessoryService
   ],
   bootstrap: [AppComponent]
 })
