@@ -1,0 +1,23 @@
+.damper-view {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding-left: 10px;
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &__title {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    &__button {
+      position: relative;
+      top: -25px;
+      left: -50px;
+      margin-left: auto;
+    }
+  }
+}

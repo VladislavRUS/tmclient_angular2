@@ -1,0 +1,15 @@
+<div class="list">
+  <div class="list__header">
+    <div class="list__header-item">№ п/п</div>
+    <div class="list__header-item">Наименование, обозначение изделия</div>
+    <div class="list__header-item">Обозначение КД</div>
+    <div class="list__header-item">Срок действия ПИ</div>
+    <div class="list__header-item">Контрактов</div>
+    <div class="list__header-item">Комплектующих</div>
+  </div>
+
+  <div class="list__body">
+    <damper-item  [damper]="damper" [idx]="idx+1" *ngFor="let damper of dampers; let idx = index"></damper-item>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+.input {
+  min-width: 300px;
+  height: 30px;
+  font-size: 20px;
+  padding-left: 4px;
+  border-radius: 1px;
+  outline: none;
+  border: 1px solid lightgray;
+
+  &:active, &:focus {
+    border: 1px solid darkgray;
+  }
+
+  &[type="date"] {
+    user-select: none;
+  }
+
+}
+
+label {
+  font-size: 14px;
+  color: darkgray;
+  display: block;
+  margin-bottom: 5px;
+}

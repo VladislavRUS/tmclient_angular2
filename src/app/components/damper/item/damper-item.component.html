@@ -1,0 +1,10 @@
+<div class="list-item">
+  <div class="list-item__row" routerLink="/dampers-detailed/{{damper.uuid}}">
+    <div class="list-item__col">{{idx}}</div>
+    <div class="list-item__col">{{damper.name}}</div>
+    <div class="list-item__col">{{damper.designation}}</div>
+    <div class="list-item__col">{{damper.expirationDate}}</div>
+    <div class="list-item__col">{{damper.contracts.length}}</div>
+    <div class="list-item__col">{{damper.accessories.length}}</div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<form class="form"
+      #contractForm="ngForm">
+
+  <div class="form-header">Добавление контракта</div>
+
+  <div class="form-control">
+    <label>Введите договор, дополнительное соглашение</label>
+    <input class="input" name="agreement" [(ngModel)]="contractForm.agreement">
+  </div>
+
+  <div class="form-control">
+    <label>Введите заказчика</label>
+    <input class="input" name="customer" [(ngModel)]="contractForm.customer" >
+  </div>
+
+  <div class="form-control">
+    <label>Ввведите количество</label>
+    <input class="input" type="number" name="amount" [(ngModel)]="contractForm.amount" >
+  </div>
+
+  <div class="form-control">
+    <label>Введите год</label>
+    <input class="input" type="number" name="year" min="2000" max="2100" [(ngModel)]="contractForm.year" >
+  </div>
+
+  <div class="form-control">
+    <label>Введите квартал</label>
+    <input class="input" type="number" name="quoter" min="1" max="4" [(ngModel)]="contractForm.quoter" >
+  </div>
+
+  <div class="form-control">
+    <label>Отметка об авансировании</label>
+    <input class="input" name="prepaidNote" [(ngModel)]="contractForm.prepaidNote" >
+  </div>
+
+  <div class="form-actions">
+    <div class="form-button _save" (click)="onSave(contractForm)">Сохранить</div>
+  </div>
+</form>

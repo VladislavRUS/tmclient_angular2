@@ -1,0 +1,65 @@
+$height: 50px;
+
+@mixin dropdown-hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+@mixin hover-transition {
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.main-header {
+  width: 100%;
+  background-color: black;
+
+  &__tabs {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    height: $height;
+  }
+
+  &__dropdown {
+    position: relative;
+    padding: 0 10px;
+    line-height: $height;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ddd;
+    cursor: pointer;
+    @include hover-transition;
+
+    &:hover {
+      @include dropdown-hover;
+    }
+
+    &:hover &-content {
+      display: block;
+    }
+
+    &-content {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      background-color: black;
+      color: #ddd;
+      z-index: 1;
+
+      &-item {
+        padding: 0 10px;
+        font-size: 12px;
+        @include hover-transition;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        &:hover {
+          @include dropdown-hover;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<div class="page__row-layout">
+  <div class="damper-detailed-view">
+    <div class="damper-detailed-view-header">
+      <div class="damper-detailed-view-header__title">Виброизолятор: {{damper?.name}}</div>
+    </div>
+
+    <form class="form">
+      <div class="form-control">
+        <label>Наименование</label>
+        <input class="input" name="name" placeholder="name"
+               [formControl]="form.controls['name']">
+      </div>
+      <div class="form-control">
+        <label>Обозначение КД</label>
+        <input class="input" name="designation" placeholder="designation"
+               [formControl]="form.controls['designation']">
+      </div>
+      <div class="form-control">
+        <label>Срок действия ПИ</label>
+        <input class="input" name="expirationDate" type="date" placeholder="expirationDate"
+               [formControl]="form.controls['expirationDate']">
+      </div>
+      <div class="form-actions">
+        <div class="form-button _save">Сохранить</div>
+      </div>
+    </form>
+
+    <div class="damper-detailed-view__content">
+
+
+      <div class="damper-detailed-view-header">
+        <div class="damper-detailed-view-header__title">Контракты: {{damper?.contracts.length}}</div>
+        <div class="damper-detailed-view-header__button">
+          <floating-button (click)="toggle('contract')" [active]="contractFormOpened"></floating-button>
+        </div>
+      </div>
+
+      <contract-form *ngIf="contractFormOpened" [damperUuid]="damperUuid"></contract-form>
+
+      <list [items]="getContracts()" [headers]="contractHeaders" [fields]="contractFields"></list>
+
+    </div>
+
+    <div class="damper-detailed-view__content">
+      <div class="damper-detailed-view-header">
+        <div class="damper-detailed-view-header__title">Комплектующие: {{damper?.accessories.length}}</div>
+        <div class="damper-detailed-view-header__button">
+          <floating-button (click)="toggle('accessory')" [active]="accessoryFormOpened"></floating-button>
+        </div>
+      </div>
+
+      <accessory-form *ngIf="accessoryFormOpened"></accessory-form>
+
+      <list [items]="getAccessories()" [headers]="accessoriesHeaders" [fields]="accessoriesFields"></list>
+
+    </div>
+
+  </div>
+</div>

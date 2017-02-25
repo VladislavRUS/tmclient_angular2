@@ -1,0 +1,25 @@
+<form class="form"
+     [@formState]="getState()"
+      #damperForm="ngForm">
+
+  <div class="form-header">Добавление виброизолятора</div>
+
+  <div class="form-control">
+    <label>Введите наименование изделия</label>
+    <input class="input" name="name" [(ngModel)]="damperForm.name">
+  </div>
+
+  <div class="form-control">
+    <label>Введите обозначение КД</label>
+    <input class="input" name="designation" [(ngModel)]="damperForm.designation" >
+  </div>
+
+  <div class="form-control">
+    <label>Выберите срок действия ПИ</label>
+    <input class="input" type="date" name="expirationDate" [(ngModel)]="damperForm.expirationDate" >
+  </div>
+
+  <div class="form-actions">
+    <div class="form-button _save" (click)="onSave(damperForm)">Сохранить</div>
+  </div>
+</form>

@@ -1,0 +1,21 @@
+@import "styles/common";
+
+.page {
+  height: 100%;
+  min-width: 800px;
+
+  &__layout {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  &__row-layout {
+    position: relative;
+    margin: 0 auto;
+    width: 1120px;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="page__row-layout">
+  <div class="damper-view">
+    <div class="damper-view-header">
+      <div class="damper-view-header__title">Виброизоляторы</div>
+      <div class="damper-view-header__button">
+        <floating-button (click)="toggleForm()" [active]="dialogOpened"></floating-button>
+      </div>
+    </div>
+
+    <damper-form
+      [opened]="dialogOpened">
+    </damper-form>
+
+    <damper-list [dampers]="dampers"></damper-list>
+  </div>
+</div>
+
